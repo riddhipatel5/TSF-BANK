@@ -1,0 +1,146 @@
+:root {
+    --outer-shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+    --inner-shadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
+    --skin-color: #ec718e;
+    --outer-shadow-0: 0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    line-height: 15px;
+    border-bottom: 3px ridge var(--skin-color);
+}
+
+nav ul {
+    float: right;
+    margin: 0;
+    padding-right: 42px;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 30px 10px;
+}
+
+.inner-shadow {
+    box-shadow: var(--inner-shadow);
+}
+
+.outer-shadow {
+    box-shadow: var(--outer-shadow);
+}
+
+.hover-in-shadow {
+    position: relative;
+    z-index: 1;
+}
+
+.hover-in-shadow:hover {
+    box-shadow: var(--outer-shadow-0);
+}
+
+.hover-in-shadow::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.hover-in-shadow:hover::after {
+    box-shadow: var(--inner-shadow);
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-align: center;
+    color: var(--skin-color);
+    background-color: transparent;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+}
+
+.btn::after {
+    border-radius: 30px;
+}
+
+.logo {
+    height: 70px;
+    float: left;
+    margin: 20px 50px;
+}
+
+h1 {
+    font-size: 30px;
+    word-spacing: 4px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 130px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.para {
+    font-size: 20px;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: auto;
+    border: 2px solid black;
+    box-shadow: 4px 3px 10px rgb(153, 152, 152);
+}
+
+table tr th {
+    padding: 20px 70px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+table tr td {
+    padding: 15px 70px;
+    text-align: center;
+    font-size: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(223, 221, 221);
+}
+
+th {
+    background-color: rgb(243, 127, 146);
+    color: white;
+}
